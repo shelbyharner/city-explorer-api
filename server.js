@@ -27,9 +27,3 @@ app.get('/weather-data', (request, response) => {
   response.json(dailyForecast)
 });
 
-class DailyForecast {
-  constructor(description, date) {
-    this.description = description;
-    this.date = date;
-  }
-}
