@@ -11,8 +11,6 @@ class newForecast {
 
 const getWeatherData = (request, response) => {
   const query = {
-    // lat: request.query.lat,
-    // lon: request.query.lon,
     city: request.query.city,
     key: WEATHER_API_KEY
   };
@@ -24,7 +22,6 @@ const getWeatherData = (request, response) => {
     .get(url)
     .query(query)
     .then(results => {
-      // console.log(results.body.data)
       response.status(200).send(results.body.data.map(
         day => 
         new newForecast(day.valid_date, day.weather.description)
